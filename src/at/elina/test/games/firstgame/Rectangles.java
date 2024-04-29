@@ -13,8 +13,11 @@ public class Rectangles extends BasicGame {
     private float xOval;
     private float yOval;
     private DIRECTION ovalDirection = DIRECTION.RIGHT;
-
     private float speedOval;
+    private float xCircle;
+    private float yCircle;
+    private DIRECTION circleDirection = DIRECTION.DOWN;
+    private float speedCircle;
 
 
     public Rectangles(String title) {
@@ -29,7 +32,11 @@ public class Rectangles extends BasicGame {
 
         this.xOval = 100;
         this.yOval = 100;
-        this.speedOval = 5.0f;
+        this.speedOval = 3.0f;
+
+        this.xCircle = 50;
+        this.yCircle = 100;
+        this.speedCircle = 3.0f;
     }
 
     @Override
@@ -81,6 +88,20 @@ public class Rectangles extends BasicGame {
             }
         }
 
+        if (circleDirection == DIRECTION.DOWN) {
+            this.yCircle += (float) delta/speedCircle;
+            if (this.yCircle>500) {
+                this.circleDirection = DIRECTION.UP;
+            }
+        }
+
+        if (circleDirection == DIRECTION.UP) {
+            this.yCircle -= (float) delta/speedCircle;
+            if (this.yCircle<100) {
+                this.circleDirection = DIRECTION.DOWN;
+            }
+        }
+
 }
 
 
@@ -90,6 +111,7 @@ public class Rectangles extends BasicGame {
         graphics.drawRect(this.xRect, this.yRect, 100,100);
         graphics.drawString("Elina´s Rectangle!", 50, 50);
         graphics.drawOval(this.xOval, this.yOval, 50, 25);
+        graphics.drawOval(this.xCircle, this.yCircle, 25, 25);
     }
 
     public static void main(String[] argv) {
