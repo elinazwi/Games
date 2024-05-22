@@ -6,22 +6,35 @@ public class Rectangle implements Actor{
     private float x;
     private float y;
     private float speed;
-    public enum DIRECTION {RIGHT, DOWN, LEFT, UP}
+    public enum DIRECTION {RIGHT, LEFT}
+    private DIRECTION rectDirection = DIRECTION.RIGHT;
 
     public Rectangle(int x, int y, float speed) {
         this.x = x;
         this.y = y;
         this.speed = speed;
+        this.rectDirection = DIRECTION.LEFT;
     }
+
 
     public void render(Graphics graphics){
         graphics.drawRect(this.x, this.y, 10, 10);
     }
 
     public void update(int delta){
-        this.x += (float)delta/speed;
-        if (this.x > 800){
-            this.x = 0;
+        if (this.rectDirection == DIRECTION.RIGHT){
+            this.x += (float)delta/speed;
+            if (this.x > 800){
+                this.x = 0;
+            }
+        }
+
+        if (this.rectDirection == DIRECTION.LEFT) {
+            this.x -= (float) delta/speed;
+            if (this.x < 0) {
+                this.x = 800;
+            }
+
         }
     }
 }

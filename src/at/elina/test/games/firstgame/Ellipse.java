@@ -2,6 +2,8 @@ package at.elina.test.games.firstgame;
 
 import org.newdawn.slick.Graphics;
 
+import java.util.Random;
+
 public class Ellipse implements Actor{
 
     private float x;
@@ -22,11 +24,13 @@ public class Ellipse implements Actor{
 
     @Override
     public void update(int delta) {
+        Random random =  new Random();
+
         this.y += (float)delta/speed;
         this.x += (float)delta/speed;
         if ((this.y > 600) && (this.x >800)) {
-            this.y = 0;
-            this.x = 0;
+            this.y = random.nextInt(200);
+            this.x = random.nextInt(400);
         }
     }
 }
