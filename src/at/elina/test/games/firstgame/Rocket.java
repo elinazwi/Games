@@ -10,8 +10,8 @@ public class Rocket implements Actor{
     private float x,y;
 
     public Rocket() throws SlickException {
-        Image tmp = new Image("testdata/rocket1.png");
-        this.rocketImage = tmp.getScaledCopy(50, 50);
+        Image tmp = new Image("testdata/rocket_elina.png");
+        this.rocketImage = tmp.getScaledCopy(100, 100);
         this.x = 100;
         this.y = 100;
     }
