@@ -31,7 +31,7 @@ public class TransparentColorTest extends BasicGame {
 	 */
 	public void init(GameContainer container) throws SlickException {
 		image = new Image("testdata/transtest.png");
-		timage = new Image("testdata/transtest.png",new Color(94,66,41,255));
+		timage = new Image("testdata/transtest.png");
 	}
 
 	/**

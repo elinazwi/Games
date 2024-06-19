@@ -1,9 +1,10 @@
 package at.elina.test.games.firstgame;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-import java.awt.*;
+
 
 public class Rectangle implements Actor{
     private float x;
@@ -21,7 +22,10 @@ public class Rectangle implements Actor{
 
 
     public void render(Graphics graphics){
+
+        graphics.setColor(Color.pink);
         graphics.drawRect(this.x, this.y, 10, 10);
+        Utility.resetColor(graphics);
     }
 
     public void update(GameContainer gameContainer, int delta){

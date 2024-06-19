@@ -1,5 +1,6 @@
 package at.elina.test.games.firstgame;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
@@ -13,7 +14,9 @@ public class Cannonball implements Actor{
 
     @Override
     public void render(Graphics graphics) {
+        graphics.setColor(Color.cyan);
         graphics.fillOval(this.x, this.y, 10, 10);
+        Utility.resetColor(graphics);
     }
 
     @Override

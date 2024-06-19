@@ -54,6 +54,7 @@ public class ObjectsGame extends BasicGame {
         for (Actor actor:this.actors) {
             actor.render(graphics);
         }
+        graphics.setBackground(Color.gray);
 
     }
 

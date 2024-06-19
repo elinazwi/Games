@@ -1,6 +1,7 @@
 package at.elina.test.games.firstgame;
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 
@@ -12,7 +13,7 @@ public class Rocket implements Actor{
     private float x,y;
 
     public Rocket() throws SlickException {
-        Image tmp = new Image("testdata/rocket_elina.png");
+        Image tmp = new Image("testdata/rocket_elina.png", new Color(94,66,41,255));
         this.rocketImage = tmp.getScaledCopy(200, 200);
         this.x = 100;
         this.y = 100;
