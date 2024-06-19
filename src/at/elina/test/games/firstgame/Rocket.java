@@ -1,8 +1,10 @@
 package at.elina.test.games.firstgame;
 
+import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
+
+import java.awt.*;
 
 public class Rocket implements Actor{
 
@@ -11,7 +13,7 @@ public class Rocket implements Actor{
 
     public Rocket() throws SlickException {
         Image tmp = new Image("testdata/rocket_elina.png");
-        this.rocketImage = tmp.getScaledCopy(100, 100);
+        this.rocketImage = tmp.getScaledCopy(200, 200);
         this.x = 100;
         this.y = 100;
     }
@@ -22,7 +24,31 @@ public class Rocket implements Actor{
     }
 
     @Override
-    public void update(int delta) {
-        this.x++;
+    public void update(GameContainer gameContainer, int delta) {
+        if (gameContainer.getInput().isKeyDown(Input.KEY_RIGHT)){
+            this.x++;
+        }
+
+        if (gameContainer.getInput().isKeyDown(Input.KEY_LEFT)){
+            this.x--;
+        }
+
+        if (gameContainer.getInput().isKeyDown(Input.KEY_UP)){
+            this.y--;
+        }
+
+        if (gameContainer.getInput().isKeyDown(Input.KEY_DOWN)){
+            this.y++;
+        }
+
     }
+
+    public float getX() {
+        return x + 100;
+    }
+
+    public float getY() {
+        return y;
+    }
+
 }

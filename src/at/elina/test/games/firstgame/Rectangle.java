@@ -1,6 +1,9 @@
 package at.elina.test.games.firstgame;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+
+import java.awt.*;
 
 public class Rectangle implements Actor{
     private float x;
@@ -21,7 +24,7 @@ public class Rectangle implements Actor{
         graphics.drawRect(this.x, this.y, 10, 10);
     }
 
-    public void update(int delta){
+    public void update(GameContainer gameContainer, int delta){
         if (this.rectDirection == DIRECTION.RIGHT){
             this.x += (float)delta/speed;
             if (this.x > 800){

@@ -1,7 +1,9 @@
 package at.elina.test.games.firstgame;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Circle implements Actor{
@@ -23,7 +25,9 @@ public class Circle implements Actor{
         graphics.drawOval(this.x, this.y, this.diameter, this.diameter);
     }
 
-    public void update(int delta){
+
+
+    public void update(GameContainer gameContainer, int delta){
         Random random = new Random();
 
         this.y += (float)delta/speed;
